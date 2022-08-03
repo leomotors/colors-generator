@@ -20,7 +20,7 @@ export const ColorCard: FC<ColorCardProps> = ({ color }) => {
   return (
     <div className="m-4 flex flex-col items-center rounded-xl bg-gradient-to-br from-blue-50 to-pink-50 p-4 shadow-lg">
       <div
-        className="h-32 w-32 rounded-full"
+        className="h-32 w-32 rounded-full border border-black"
         style={{ backgroundColor: colorToCSS(color) }}
       />
 

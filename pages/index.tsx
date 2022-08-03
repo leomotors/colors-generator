@@ -26,13 +26,13 @@ const Home: NextPage = () => {
 
       <h2 className="text-4xl font-bold">Colors</h2>
 
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-5 justify-items-center">
         {colors.map((color, index) => (
           <ColorCard key={`color-card-${index}`} color={color} />
         ))}
-
-        {colors.length ? null : <p>No Colors Yet</p>}
       </div>
+
+      {colors.length ? null : <p>No Colors Yet</p>}
     </main>
   );
 };
