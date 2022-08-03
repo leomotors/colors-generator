@@ -15,7 +15,10 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": ".",
+    "importsNotUsedAsValues": "error",
     "paths": {
+      "$components/*": ["components/*"],
+      "$lib/*": ["lib/*"],
       "$styles/*": ["styles/*"]
     }
   },

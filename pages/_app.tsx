@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Colors Generator</title>
         <meta name="description" content="Just a colors generator" />
+        <link rel="icon" href="rgb.webp" />
       </Head>
       <Component {...pageProps} />
     </>
