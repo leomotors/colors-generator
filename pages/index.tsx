@@ -1,7 +1,8 @@
-import { ColorCard } from "$components/ColorCard";
+import { ColorCard } from "$components/elements/ColorCard";
 import type { IColorResponse } from "$lib/colors";
 
 import type { NextPage } from "next";
+import Link from "next/link";
 
 import { useState } from "react";
 
@@ -33,6 +34,8 @@ const Home: NextPage = () => {
       </div>
 
       {colors.length ? null : <p>No Colors Yet</p>}
+
+      <Link href="/journey">My Journey</Link>
     </main>
   );
 };

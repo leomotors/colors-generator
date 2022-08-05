@@ -1,0 +1,32 @@
+import { MdxLayout } from "$components/layouts/MdxLayout";
+
+export default ({ children }) => <MdxLayout>{children}</MdxLayout>;
+
+# My Journey
+
+This page is where I store my opinion and approach for this assignment
+
+Back to [Home Page](/)
+
+## Stage 1
+
+The stage 1 is pretty straight-forward, I took approximately an hour
+(including _resting_ time)
+
+### The approach - Backend
+
+```ts
+export interface IColorDef {
+  type: string;
+  fields: Record<string, [number, number]>;
+}
+
+export type IColorDefs = IColorDef[];
+```
+
+I use schema-based generation over hard-coded if-else to make it easily extensible.
+
+## What I learn from this assignment
+
+- Using MDX with Next
+  - I try out MDX for the first time to make this journey page

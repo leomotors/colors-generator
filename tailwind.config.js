@@ -7,6 +7,7 @@ const config = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./styles/**/*.{css,scss}",
   ],
+  plugins: [require("@tailwindcss/typography")],
 };
 
 module.exports = config;
