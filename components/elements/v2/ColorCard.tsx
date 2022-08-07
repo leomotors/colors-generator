@@ -14,7 +14,7 @@ export function mapFields(
   return ((value - from[0]) / (from[1] - from[0])) * (to[1] - to[0]) + to[0];
 }
 
-function colorToCSS(res: IColorResponse) {
+export function colorToCSS(res: IColorResponse) {
   const colorDef = ColorDefs.find((d) => d.type == res.type);
 
   if (!colorDef) {
