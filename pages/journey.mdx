@@ -1,10 +1,12 @@
 import { MdxLayout } from "$components/layouts/MdxLayout";
 
-export default ({ children }) => <MdxLayout>{children}</MdxLayout>;
+export default ({ children }) => (
+  <MdxLayout title="Colors Generator | Journey">{children}</MdxLayout>
+);
 
 # My Journey
 
-This page is where I store my opinion and approach for this assignment
+This page is where I store my opinion and approach for this assignment.
 
 Back to [Home Page](/)
 
@@ -54,7 +56,7 @@ In order for team to add new colors (ex: BRGB), they will need to define schema 
       alpha: 1,
     },
   },
-},
+}
 ```
 
 Because CSS only supports RGB/RGBA and HSL/HSLA all color spaces must have
@@ -65,7 +67,7 @@ support all kinds of **Linear Map** which mean if the team has BHSL, it will be
 very easy to add it. However, if the team needs curved map (like ease-in, polynomial, etc.)
 There will be some work needed.
 
-In those case, I will first listen to their scope and try my best to make schema
+In this case, I will first listen to their scope and try my best to make schema
 covers what they want.
 
 ## Known Issues
@@ -78,7 +80,9 @@ covers what they want.
 These are things I will do next when the team are okay with this idea.
 
 - Error handling
-- Fixes Known Issues
+- Fix Known Issues
+- Make UI a little bit more beautiful
+- Update frontend to allow generating custom number of colors
 
 ## What I learn from this assignment
 
