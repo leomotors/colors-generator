@@ -26,6 +26,45 @@ export type IColorDefs = IColorDef[];
 
 I use schema-based generation over hard-coded if-else to make it easily extensible.
 
+## Stage 2
+
+The previous version of API use schema-based for backend but not for frontend,
+so I modify it and frontend to use schema-based.
+
+This allows the team to easily define their schema and add it to definitions.
+
+In order for team to add new colors (ex: BRGB), they will need to define schema like this:
+
+```ts
+{
+  type: "brgb",
+  fields: {
+    red: [0, 10000],
+    green: [0, 10000],
+    blue: [0, 10000],
+  },
+  conversion: {
+    to: "rgba",
+    map: {
+      red: { to: "red", range: [0, 255] },
+      green: { to: "green", range: [0, 255] },
+      blue: { to: "blue", range: [0, 255] },
+    },
+    default: {
+      alpha: 1,
+    },
+  },
+},
+```
+
+Because CSS only supports RGB/RGBA and HSL/HSLA all color spaces must have
+definition of transforming into these color spaces.
+
+By looking at team requirements of BRGB, I make my schema-based generation
+support all kinds of **Linear Map** which mean if the team has BHSL, it will be
+very easy to add it. However, if the team needs curved map (like ease-in, polynomial, etc.)
+There will be some work needed.
+
 ## What I learn from this assignment
 
 - Using MDX with Next

@@ -1,4 +1,4 @@
-import type { IColorResponse } from "$lib/colors";
+import type { IColorResponse } from "$lib/v1/colors";
 
 import type { FC } from "react";
 

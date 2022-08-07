@@ -1,4 +1,4 @@
-name: Linting
+name: Linting & Testing
 
 on:
   push:
@@ -17,5 +17,7 @@ jobs:
         run: yarn install
       - name: Lint with ESLint and Prettier
         run: yarn lint --max-warnings=0
+      - name: Run Unit Test
+        run: yarn test
       - name: CRLF Phobia
         run: yarn dlx crlf-phobia *

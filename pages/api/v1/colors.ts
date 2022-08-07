@@ -1,4 +1,4 @@
-import { ColorDefs, GenerateColors } from "$lib/colors";
+import { ColorDefs, GenerateColors } from "$lib/v1/colors";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 

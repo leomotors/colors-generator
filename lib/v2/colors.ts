@@ -1,5 +1,5 @@
 export interface IColorConversionDef<TF extends string[]> {
-  to: "rgba" | "hsl";
+  to: "rgba" | "hsla";
   map: Record<TF[number], { to: string; range: [number, number] }>;
   default?: Record<string, number>;
 }
@@ -15,7 +15,8 @@ export type IColorDefs = IColorDef<any>[];
 
 export const ColorDefs: [
   IColorDef<["red" | "green" | "blue"]>,
-  IColorDef<["hue" | "saturation" | "lightness"]>
+  IColorDef<["hue" | "saturation" | "lightness"]>,
+  IColorDef<["red" | "green" | "blue"]>
 ] = [
   {
     type: "rgb",
@@ -44,17 +45,41 @@ export const ColorDefs: [
       lightness: [0, 100],
     },
     conversion: {
-      to: "hsl",
+      to: "hsla",
       map: {
         hue: { to: "hue", range: [0, 360] },
         saturation: { to: "saturation", range: [0, 100] },
         lightness: { to: "lightness", range: [0, 100] },
       },
+      default: {
+        alpha: 1,
+      },
+    },
+  },
+  {
+    type: "brgb",
+    fields: {
+      red: [0, 10000],
+      green: [0, 10000],
+      blue: [0, 10000],
+    },
+    conversion: {
+      to: "rgba",
+      map: {
+        red: { to: "red", range: [0, 255] },
+        green: { to: "green", range: [0, 255] },
+        blue: { to: "blue", range: [0, 255] },
+      },
+      default: {
+        alpha: 1,
+      },
     },
   },
 ];
 
-export type IColorResponse = { type: string } & { [key: string]: number };
+export type IColorResponse = { type: "rgb" | "hsl" | "brgb" } & {
+  [key: string]: number;
+};
 
 export function GenerateColor(def: IColorDefs) {
   const targetType = def[Math.floor(Math.random() * def.length)];

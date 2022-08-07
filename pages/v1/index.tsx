@@ -1,5 +1,5 @@
-import { ColorCard } from "$components/elements/ColorCard";
-import type { IColorResponse } from "$lib/colors";
+import { ColorCard } from "$components/elements/v1/ColorCard";
+import type { IColorResponse } from "$lib/v1/colors";
 
 import type { NextPage } from "next";
 import Link from "next/link";
@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   const [colors, setColors] = useState<IColorResponse[]>([]);
 
   async function handleGenerate() {
-    const data = await fetch("/api/colors").then((r) => r.json());
+    const data = await fetch("/api/v1/colors").then((r) => r.json());
     setColors(data);
   }
 
@@ -35,7 +35,11 @@ const Home: NextPage = () => {
 
       {colors.length ? null : <p>No Colors Yet</p>}
 
-      <Link href="/journey">My Journey</Link>
+      <Link href="/">
+        <a className="rounded-lg border border-blue-200 bg-blue-100 p-2 font-bold">
+          Home Page
+        </a>
+      </Link>
     </main>
   );
 };
