@@ -16,6 +16,6 @@ jobs:
       - name: Install Dependencies (Yarn)
         run: yarn install
       - name: Lint with ESLint and Prettier
-        run: yarn lint
+        run: yarn lint --max-warnings=0
       - name: CRLF Phobia
         run: yarn dlx crlf-phobia *
